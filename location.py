@@ -23,7 +23,7 @@ if __name__ == "__main__":
                 print("enter a filename")
                 sys.exit(1)
 
-        sc= SparkContext(appName="avdTweetlength")
+        sc= SparkContext(appName="location")
         tweets=sc.textFile(sys.argv[1])
         coordinates=tweets.flatMap(getCount)
         l=coordinates.filter(lambda pair:pair[0]=="loc")
